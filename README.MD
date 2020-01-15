@@ -6,3 +6,4 @@
 6. 绘制轨迹，车辆在轨迹上移动，画方圆五百米的圆，框选并高亮范围内点位。
 7. showMovePopup()文档不全，没有参数传递
 8. 弹窗隐藏的方法是哪个
+9. clusterLayer.html  initClusterSelectedFn第一个参数不是一个数组，但demo却去判断length
