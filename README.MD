@@ -7,3 +7,4 @@
 7. showMovePopup()文档不全，没有参数传递
 8. 弹窗隐藏的方法是哪个
 9. clusterLayer.html  initClusterSelectedFn第一个参数不是一个数组，但demo却去判断length
+![Image text](https://github.com/ShuangMuChengLi/rk-map/blob/master/clickFeature.png)
