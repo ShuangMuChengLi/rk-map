@@ -15,6 +15,27 @@ rkInteraction.enableMoveSelectInteraction([vecLayer]);
 rkInteraction.enableSelectInteraction([vecLayer]);
 rkInteraction.enableRightSelectInteraction([vecLayer]);
 ````
+
 11. 事件名：select movein moveout rightdown
 
     样式：selectedStyle moveinStyle moveoutStyle rightdownStyle
+12. ol.ropeok.RKFeatures、new ol.ropeok.RKVectorLayer建议就一个参数
+````
+new ol.ropeok.RKFeatures(
+        features,
+        true,
+        vecLayer);
+````
+````
+// 矢量图层
+const opt_layer = {
+    vectorSource:vecSrc,
+    styleOption: {},
+    styleFunction: styleFunction
+};
+// 标签样式，若有设置styleFunction，则styleOption无效，未设置styleFunction时，则使用styleOption中的样式
+var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
+````
+13. 图层和feature加样式的方法名：setStyle
+14. demo要简洁些，明了的告诉读者，api怎么调用。不要过度封装
+15. 移除ol.ropeok.RKFeatureStyle。前端不用调用这个方法，只传递一个对象，api内部自行调用。
