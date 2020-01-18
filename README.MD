@@ -39,3 +39,6 @@ var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
 13. 图层和feature加样式的方法名：setStyle
 14. demo要简洁些，明了的告诉读者，api怎么调用。不要过度封装
 15. 移除ol.ropeok.RKFeatureStyle。前端不用调用这个方法，只传递一个对象，api内部自行调用。
+16. jsdemo/demo/drawFeatureByData.html打开默认报错，添加按钮不知道什么功能   点了没效果
+17. RKDrawFeatureByData  设置了drawLayer为什么还要设置vecSources  建议只传drawLayer
+18. vecSources建议命名为 vectorSource，drawLayer建议命名为layer。所有key名，统一，便于前端记忆
