@@ -8,3 +8,13 @@
 8. 弹窗隐藏的方法是哪个
 9. clusterLayer.html  initClusterSelectedFn第一个参数不是一个数组，但demo却去判断length
 ![Image text](https://github.com/ShuangMuChengLi/rk-map/blob/master/clickFeature.png)
+10. 移除以下代码，使用addEventListener、removeEventListener代替
+````
+var rkInteraction = new ol.ropeok.RKInteraction(rkMap, {"deselectFlag": true});
+rkInteraction.enableMoveSelectInteraction([vecLayer]);
+rkInteraction.enableSelectInteraction([vecLayer]);
+rkInteraction.enableRightSelectInteraction([vecLayer]);
+````
+11. 事件名：select movein moveout rightdown
+
+    样式：selectedStyle moveinStyle moveoutStyle rightdownStyle
