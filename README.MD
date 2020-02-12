@@ -2,7 +2,43 @@
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
 2. 测距会请求http://localhost:5000/image/marker.png.不合理
 3. 测距设置的颜色跟显示的颜色不一致
-4.
+4. 点击后出现两个重叠图标
+5. 不设置鼠标滑过的样式。鼠标滑过，元素消失了。应该默认不变才对
+6. vector.getSource().addFeatures。图标添加第一个没问题，执行第二次，标记第二个点就标记不出来
+````
+    getNewVector(){
+      var srcOpt = {
+      };
+      // 数据容器
+      var vecSrc = new RKVectorSource(srcOpt);
+
+      // 图层样式
+      const layerStyleOption = {
+        imgSrc: require('./images/marker.png')
+      };
+      // 矢量图层
+      const opt_layer = {
+        opacity: 0.9,
+        vectorSource: vecSrc,
+        layerStyle: layerStyleOption
+      };
+
+      var vecLayer = new RKVectorLayer(opt_layer);
+      rkMap.addLayer(vecLayer);
+      return vecLayer;
+    },
+    addFeatures(vector, point){
+      // 标签数据
+      var rkFeature = new RKFeatures(
+        [
+          {
+            lonLat: point,
+          }
+        ]);
+      console.log(rkFeature.getFeatures())
+      vector.getSource().addFeatures(rkFeature.getFeatures());
+    },
+````
 
 
 ## 优化
