@@ -1,3 +1,7 @@
+## 优先改
+1. 测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
+
+## 优化
 1. 图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. feature和vector不应该耦合在一起
 3. 图标点击后，出现两个叠加的图标
@@ -42,3 +46,5 @@ var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
 16. jsdemo/demo/drawFeatureByData.html打开默认报错，添加按钮不知道什么功能   点了没效果
 17. RKDrawFeatureByData  设置了drawLayer为什么还要设置vecSources  建议只传drawLayer
 18. vecSources建议命名为 vectorSource，drawLayer建议命名为layer。所有key名，统一，便于前端记忆
+
+
