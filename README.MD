@@ -42,8 +42,9 @@
 7. 缺少demo或API：矩形、圆形、不规则图形的手动框选，框选完获取地图上的点位数组，然后点位高亮。框选图形的层级要比点位低，不能遮住点位。取消框选，点位样式还原。
 8. 地图轨迹播放功能封装，要存储点位数组的信息到propertys里，每个点位必然包含lonlat。
 形式一：图标自动在轨迹上移动；形式二：每个图标依次高亮
-9. 没有设置样式,总是请求这个image/marker.png图片。项目中应该不会存这个。能不能默认用几何圆点代替  不要用图片。api中全局替换下
+9.  api中图片用import img from './marker.png'方式引用
 10. 要实现markerVector.setLayerStyle('layerStyle', layerStyleOption);功能
+11. 未设置样式的情况下   刚刚的写法（第9点）  图片能出来了  但出现Uncaught TypeError: Cannot set property 'text' of undefined 错误at RKStyleFun.initSingleStyle (RKStyleFun.js:268)
 
 
 
