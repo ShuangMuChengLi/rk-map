@@ -45,7 +45,7 @@
 9.  （已修改）api中图片用import img from './marker.png'方式引用
 10. （已修改）要实现markerVector.setLayerStyle('layerStyle', layerStyleOption);功能
 11. （已修改）未设置样式的情况下   刚刚的写法（第9点）  图片能出来了  但出现Uncaught TypeError: Cannot set property 'text' of undefined 错误at RKStyleFun.initSingleStyle (RKStyleFun.js:268)
-
+12. drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
 
 
 ## 优化
@@ -93,6 +93,6 @@ var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
 16. jsdemo/demo/drawFeatureByData.html打开默认报错，添加按钮不知道什么功能   点了没效果
 17. RKDrawFeatureByData  设置了drawLayer为什么还要设置vecSources  建议只传drawLayer
 18. vecSources建议命名为 vectorSource，drawLayer建议命名为layer。所有key名，统一，便于前端记忆
-19. drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
+
 
 
