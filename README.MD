@@ -39,14 +39,15 @@
       vector.getSource().addFeatures(rkFeature.getFeatures());
     },
 ````
-7. 缺少demo或API：矩形、圆形、不规则图形的手动框选，框选完获取地图上的点位数组，然后点位高亮。框选图形的层级要比点位低，不能遮住点位。取消框选，点位样式还原。
+7. （已修改）缺少demo或API：矩形、圆形、不规则图形的手动框选，框选完获取地图上的点位数组，然后点位高亮。框选图形的层级要比点位低，不能遮住点位。取消框选，点位样式还原。
 8. 地图轨迹播放功能封装，要存储点位数组的信息到propertys里，每个点位必然包含lonlat。
 形式一：图标自动在轨迹上移动；形式二：每个图标依次高亮
 9.  （已修改）api中图片用import img from './marker.png'方式引用
 10. （已修改）要实现markerVector.setLayerStyle('layerStyle', layerStyleOption);功能
 11. （已修改）未设置样式的情况下   刚刚的写法（第9点）  图片能出来了  但出现Uncaught TypeError: Cannot set property 'text' of undefined 错误at RKStyleFun.initSingleStyle (RKStyleFun.js:268)
 12. drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
-
+13. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
+14. new RKFeatures(pointList)新建feature时，将点位数据存储在properties中。可以通过getProperties()取出
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
