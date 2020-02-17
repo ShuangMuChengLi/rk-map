@@ -47,7 +47,10 @@
 11. （已修改）未设置样式的情况下   刚刚的写法（第9点）  图片能出来了  但出现Uncaught TypeError: Cannot set property 'text' of undefined 错误at RKStyleFun.initSingleStyle (RKStyleFun.js:268)
 12. drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
 13. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
-14. new RKFeatures(pointList)新建feature时，将点位数据存储在properties中。可以通过getProperties()取出
+14. （已修改）new RKFeatures(pointList)新建feature时，将点位数据存储在properties中。可以通过getProperties()取出
+15. setLayerStyle  addLayerEventListener只能执行一次  其他图层再设置就失效了   这个问题很严重  优先排查下
+16. 框选 的画笔必须跟feature同一个图层吗？当前只能同一图层
+17. addVectorFeatures  addFeatures能不能统一addFeatures。是不是考虑用原生就可以
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
