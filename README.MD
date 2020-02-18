@@ -52,12 +52,14 @@
 16. （已修改）框选的画笔selectLayers如果没传，默认框选所有的
 17. addVectorFeatures  addFeatures能不能统一addFeatures。是不是考虑用原生就可以
 18. （已修改）聚合图层使用setLayerStyle，会导致数字的出现
-19. setLayerStyle能否传递函数，待确认
-20. 显示隐藏地图弹窗的demo
+19. setLayerStyle能否传递函数
+20. 显示隐藏地图弹窗的demo（有api，但最好加demo)
 21. 地图切换的api
-22. 框选实现右键取消框选画笔状态
+22. 框选实现右键取消框选画笔状态。遇到了一个问题  用户开始准备框选  鼠标变成了画笔  突然不想画了   右键取消画笔
 23. 设置了vector.addLayerEventListener('movein'）  但没设置movein样式。会导致图标消失，期望默认使用normal样式  不要变
 24. vector.addLayerEventListener('moveout'）没触发
+25. 轨迹demo要执行start()  然后执行startManualTrack()才有效。如何一开始就进行就能手动播放轨迹？
+26. 轨迹demo中的白色动球圆是哪里设置，如何设置一个自定义图片。
 
 
 ## 优化
