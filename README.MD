@@ -48,15 +48,17 @@
 12. （已修改）drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
 13. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
 14. （已修改）new RKFeatures(pointList)新建feature时，将点位数据存储在properties中。可以通过getProperties()取出
-15. setLayerStyle  addLayerEventListener只能执行一次  其他图层再设置就失效了   这个问题很严重  优先排查下
-16. 框选的画笔selectLayers如果没传，默认框选所有的
+15. （已修改）setLayerStyle  addLayerEventListener只能执行一次  其他图层再设置就失效了   这个问题很严重  优先排查下
+16. （已修改）框选的画笔selectLayers如果没传，默认框选所有的
 17. addVectorFeatures  addFeatures能不能统一addFeatures。是不是考虑用原生就可以
-18. 聚合图层使用setLayerStyle，会导致数字的出现
+18. （已修改）聚合图层使用setLayerStyle，会导致数字的出现
 19. setLayerStyle能否传递函数，待确认
 20. 显示隐藏地图弹窗的demo
 21. 地图切换的api
-22. 获取地图当前中心点坐标的api
-23. 框选实现右键取消框选画笔状态
+22. 框选实现右键取消框选画笔状态
+23. 设置了vector.addLayerEventListener('movein'）  但没设置movein样式。会导致图标消失，期望默认使用normal样式  不要变
+24. vector.addLayerEventListener('moveout'）没触发
+
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
