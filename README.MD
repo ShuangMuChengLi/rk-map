@@ -53,6 +53,8 @@
 17. addVectorFeatures  addFeatures能不能统一addFeatures。是不是考虑用原生就可以
 18. 聚合图层使用setLayerStyle，会导致数字的出现
 19. setLayerStyle能否传递函数，待确认
+20. 显示隐藏地图弹窗的demo
+21. 地图切换的api
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
