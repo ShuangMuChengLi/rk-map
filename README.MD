@@ -58,9 +58,9 @@
 22. 框选实现右键取消框选画笔状态。遇到了一个问题  用户开始准备框选  鼠标变成了画笔  突然不想画了   右键取消画笔
 23. 设置了vector.addLayerEventListener('movein'）  但没设置movein样式。会导致图标消失，期望默认使用normal样式  不要变
 24. vector.addLayerEventListener('moveout'）没触发
-25. 轨迹demo要执行start()，然后执行startManualTrack()才有效。如何一开始就进行就能手动播放轨迹？
+25. （已修改）轨迹demo要执行start()，然后执行startManualTrack()才有效。如何一开始就进行就能手动播放轨迹？
 26. 轨迹demo中的白色动球圆是哪里设置，如何设置一个自定义图片。
-
+27. doAction:不要必填
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
