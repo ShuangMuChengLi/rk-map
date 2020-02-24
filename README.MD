@@ -64,6 +64,7 @@
 28. （已修改）vector.setLayerStyle('layerStyle', (data)=>{    设置了color: '#fff'没生效
 29. 聚合图层用resourceVectorSet[type].vector.getSource().clear();清空后，点位只是隐藏，没有移除，再显示图层，点位又出来了。
 30. 轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
+31. trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
