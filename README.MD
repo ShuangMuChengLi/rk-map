@@ -62,16 +62,17 @@
 26. （已修改）轨迹demo中的白色动球圆是哪里设置，如何设置一个自定义图片。
 27. （已修改）doAction:不要必填
 28. （已修改）vector.setLayerStyle('layerStyle', (data)=>{    设置了color: '#fff'没生效
-29. (待确认)聚合图层用resourceVectorSet[type].vector.getSource().clear();清空后，点位只是隐藏，没有移除，再显示图层，点位又出来了。
-30. (待确认)轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
-31. (待确认)trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
+29. （已修改）聚合图层用resourceVectorSet[type].vector.getSource().clear();清空后，点位只是隐藏，没有移除，再显示图层，点位又出来了。
+vector.getLayerSourse().clear();
+30. （已修改）轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
+31. （已修改）trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
 32. 手动\自动画一条线，高亮线条周边X米范围的点位
 33. （已修改）执行一次  nextTrack，但doAction触发了两次
 34. 点击轨迹上的点，能够高亮，并触发事件
 35. 所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
 36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
-37. (待确认)提供清除轨迹的api
-38. (待确认)停止轨迹手动播放API
+37. (已修改)提供清除轨迹的api——drawTool.clear();
+38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米
 
 ## 优化
