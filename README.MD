@@ -1,5 +1,4 @@
 ## 优先改
-
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
 2. （已修改）测距会请求http://localhost:5000/image/marker.png.不合理
 3. （已修改）测距设置的颜色跟显示的颜色不一致
@@ -72,7 +71,7 @@
 35. 所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
 36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
 37. (待确认)提供清除轨迹的api
-38. (待确认) 停止轨迹手动播放API
+38. (待确认)停止轨迹手动播放API
 39. drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米
 
 ## 优化
