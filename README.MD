@@ -69,7 +69,7 @@
 33. 执行一次  nextTrack，但doAction触发了两次
 34. 点击轨迹上的点，能够高亮，并触发事件
 35. 所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
-
+36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
@@ -118,3 +118,5 @@ var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
 
 
 
+## 笔记
+1. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)
