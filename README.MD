@@ -66,10 +66,14 @@
 30. 轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
 31. trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
 32. 手动\自动画一条线，高亮线条周边X米范围的点位
-33. 执行一次  nextTrack，但doAction触发了两次
+33. （已修改）执行一次  nextTrack，但doAction触发了两次
 34. 点击轨迹上的点，能够高亮，并触发事件
 35. 所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
-36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo
+36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
+37. 提供清除轨迹的api
+38. 停止轨迹手动播放API
+39. drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米
+
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
@@ -78,7 +82,7 @@
 5. （已修改）绘制圆形、矩形、任意图形，框选范围内的点位，并高亮
 6. 绘制轨迹，车辆在轨迹上移动，画方圆五百米的圆，框选并高亮范围内点位。
 7. showMovePopup()文档不全，没有参数传递
-8. 弹窗隐藏的方法是哪个
+8. （已修改）弹窗隐藏的方法是哪个
 9. clusterLayer.html  initClusterSelectedFn第一个参数不是一个数组，但demo却去判断length
 ![Image text](https://github.com/ShuangMuChengLi/rk-map/blob/master/clickFeature.png)
 10. 移除以下代码，使用addEventListener、removeEventListener代替
@@ -115,7 +119,7 @@ var vecLayer = new ol.ropeok.RKVectorLayer(opt_layer);
 16. jsdemo/demo/drawFeatureByData.html打开默认报错，添加按钮不知道什么功能   点了没效果
 17. RKDrawFeatureByData  设置了drawLayer为什么还要设置vecSources  建议只传drawLayer
 18. vecSources建议命名为 vectorSource，drawLayer建议命名为layer。所有key名，统一，便于前端记忆
-
+19. source的api整合到vector中
 
 
 ## 笔记
