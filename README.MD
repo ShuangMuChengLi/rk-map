@@ -40,7 +40,7 @@
     },
 ````
 7. （已修改）缺少demo或API：矩形、圆形、不规则图形的手动框选，框选完获取地图上的点位数组，然后点位高亮。框选图形的层级要比点位低，不能遮住点位。取消框选，点位样式还原。
-8. （已修改）地图轨迹播放功能封装，要存储点位数组的信息到propertys里，每个点位必然包含lonlat。
+8. （已修改）地图轨迹播放功能封装，要存储点位数组的信息到properties里，每个点位必然包含lonlat。
 形式一：图标自动在轨迹上移动；形式二：每个图标依次高亮
 9.  （已修改）api中图片用import img from './marker.png'方式引用
 10. （已修改）要实现markerVector.setLayerStyle('layerStyle', layerStyleOption);功能
@@ -66,6 +66,9 @@
 30. 轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
 31. trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
 32. 手动\自动画一条线，高亮线条周边X米范围的点位
+33. 执行一次  nextTrack，但doAction触发了两次
+34. 点击轨迹上的点，能够高亮，并触发事件
+35. 所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
