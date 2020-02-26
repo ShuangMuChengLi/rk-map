@@ -74,7 +74,7 @@ vector.getLayerSourse().clear();
 37. (已修改)提供清除轨迹的api——drawTool.clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. (已修改)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
-40. (待验证)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
+40. (已修改)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
 41. 多个点位  地图居中
 42. vecLayer1.getSource().addRkFeatures([{
         id: '11',
