@@ -68,12 +68,12 @@ vector.getLayerSourse().clear();
 31. （已修改）trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
 32. 手动\自动画一条线，高亮线条周边X米范围的点位
 33. （已修改）执行一次  nextTrack，但doAction触发了两次
-34. (待验证)点击轨迹上的点，能够高亮，并触发事件，并触发手动播放模式，并将当前播放的index设置为这个点
-35. (待验证)所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
+34. 点击轨迹上的点，能够高亮，并触发事件，并触发手动播放模式，并将当前播放的index设置为这个点
+35. (已修改)所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
 36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
 37. (已修改)提供清除轨迹的api——drawTool.clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
-39. (待验证)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
+39. (已修改)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
 40. (待验证)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
 41. 多个点位  地图居中
 42. vecLayer1.getSource().addRkFeatures([{
@@ -86,6 +86,8 @@ vector.getLayerSourse().clear();
         text: '21'
     }
     ]).setCenter();
+    
+43. 删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
 ## 优化1
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
