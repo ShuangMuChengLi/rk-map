@@ -75,7 +75,17 @@ vector.getLayerSourse().clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. (待验证)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
 40. (待验证)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
-
+41. 多个点位  地图居中
+42. vecLayer1.getSource().addRkFeatures([{
+        id: '11',
+        lonLat: [118.171, 24.511],
+        text: '11'
+    }, {
+        id: '21',
+        lonLat: [118.161, 24.52],
+        text: '21'
+    }
+    ]).setCenter();
 ## 优化1
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
