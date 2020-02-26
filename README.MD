@@ -74,7 +74,7 @@ vector.getLayerSourse().clear();
 37. (已修改)提供清除轨迹的api——drawTool.clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. (已修改)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
-40. (待验证)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
+40. (已修改)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
 41. (待验证)多个点位  地图居中 -- rkMap.fitViewZoom(pointList); var pointList = [{ id: '1', lonLat: [118.15, 24.51], text: '1'}, {id: '2', lonLat: [118.14, 24.5],text: '2'}
 42. (待验证)vecLayer1.getSource().addRkFeatures([{
         id: '11',
@@ -88,6 +88,8 @@ vector.getLayerSourse().clear();
     ]).setCenter(); -- 修改为vecLayer.addRkFeatures([{},{}]).updateView();
     
 43. 删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
+44. 缺少轨迹自动播放结束的回调函数
+
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
