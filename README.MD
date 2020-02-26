@@ -88,6 +88,8 @@ vector.getLayerSourse().clear();
     ]).setCenter();
     
 43. 删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
+44. 缺少轨迹自动播放结束的回调函数
+
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
