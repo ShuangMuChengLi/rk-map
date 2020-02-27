@@ -87,11 +87,11 @@ vector.getLayerSourse().clear();
     }
     ]).setCenter(); -- 修改为vecLayer.addRkFeatures([{},{}]).updateView();
     
-43. 删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
-44. 缺少轨迹自动播放结束的回调函数
+43. (待验证)删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
+44. (待验证)缺少轨迹自动播放结束的回调函数
 45. mapServiceObj的projection和RKMap的projection区别
 46. 不设置projection，updateView失效
-47. 获取某点根据X,Y像素的偏移后的经纬度
+47. (待验证)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
