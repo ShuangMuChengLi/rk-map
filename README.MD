@@ -91,6 +91,7 @@ vector.getLayerSourse().clear();
 44. 缺少轨迹自动播放结束的回调函数
 45. mapServiceObj的projection和RKMap的projection区别
 46. 不设置projection，updateView失效
+47. 获取某点根据X,Y像素的偏移后的经纬度
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
