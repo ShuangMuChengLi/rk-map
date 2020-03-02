@@ -1,9 +1,9 @@
 ## 优先改
-4. 点击后出现两个重叠图标
-13. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
-24. vector.addLayerEventListener('moveout'）没触发
-32. 手动\自动画一条线，高亮线条周边X米范围的点位
-36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
+1. 点击后出现两个重叠图标
+2. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
+3. vector.addLayerEventListener('moveout'）没触发
+4. 手动\自动画一条线，高亮线条周边X米范围的点位
+5. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
 
 ## 已修改
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
