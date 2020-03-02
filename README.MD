@@ -75,8 +75,8 @@ vector.getLayerSourse().clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. (已修改)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
 40. (已修改)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
-41. (待验证)多个点位  地图居中 -- rkMap.fitViewZoom(pointList); var pointList = [{ id: '1', lonLat: [118.15, 24.51], text: '1'}, {id: '2', lonLat: [118.14, 24.5],text: '2'}
-42. (待验证)vecLayer1.getSource().addRkFeatures([{
+41. (已修改)多个点位  地图居中 -- rkMap.fitViewZoom(pointList); var pointList = [{ id: '1', lonLat: [118.15, 24.51], text: '1'}, {id: '2', lonLat: [118.14, 24.5],text: '2'}
+42. (已修改)vecLayer1.getSource().addRkFeatures([{
         id: '11',
         lonLat: [118.171, 24.511],
         text: '11'
@@ -87,14 +87,14 @@ vector.getLayerSourse().clear();
     }
     ]).setCenter(); -- 修改为vecLayer.addRkFeatures([{},{}]).updateView();
     
-43. (待验证)删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
-44. (待验证)缺少轨迹自动播放结束的回调函数
-45. (待验证)mapServiceObj的projection和RKMap的projection区别 
+43. (已修改)删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
+44. (已修改)缺少轨迹自动播放结束的回调函数
+45. (已修改)mapServiceObj的projection和RKMap的projection区别 ——mapServiceObj的projection是view的
 -- mapServiceObj 的 projection 是用于通过url加载的数据源source的投影坐标,会影响到source的显示。
 -- RKMap 的projection 设置的是view(视图)的projection。 其作用之一是，当绘制点，线，面的时候，其坐标需要符合projection投影的坐标要求。否则就会显示不出来或者
 显示到其他较远的地方。
-4 (待验证)不设置projection，updateView失效
-47. (待验证)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
+46. (已修改)不设置projection，updateView失效
+47. (已修改)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
