@@ -93,7 +93,7 @@ vector.getLayerSourse().clear();
 -- mapServiceObj 的 projection 是用于通过url加载的数据源source的投影坐标,会影响到source的显示。
 -- RKMap 的projection 设置的是view(视图)的projection。 其作用之一是，当绘制点，线，面的时候，其坐标需要符合projection投影的坐标要求。否则就会显示不出来或者
 显示到其他较远的地方。
-4 (待验证)不设置projection，updateView失效
+46. (待验证)不设置projection，updateView失效
 47. (待验证)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
 
 ## 优化
