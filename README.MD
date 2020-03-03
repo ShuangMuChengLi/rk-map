@@ -2,8 +2,17 @@
 1. 点击后出现两个重叠图标
 2. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
 3. vector.addLayerEventListener('moveout'）没触发
-4. 手动\自动画一条线，高亮线条周边X米范围的点位
+
+4. 手动\自动画一条线，高亮线条周边X米范围的点位  -- 使用方法：参考drawTool.html 
+var drawTool = new ol.ropeok.RKDrawFeature(rkMap, drawOption, drawCallBack) 中的第二个参数：drawOption = {
+        drawSelect:true [表示执行选中绘制图形内的元素],  selectedRadium:50 [用于指定绘制线段时候，线段周围50米的范围内为选中范围，单位米], ...}
+drawTool.setSelectedRadium(60) 设置selecedRadium的半径。
+
 5. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
+--使用方法,传入feature的id 或 feature本身。 vecLayer.setFeatureSelected(id)
+
+6. 发现之前函数名称命名错误：原来函数为vecLayer.getLayerSourse() ,现在改为vecLayer.getLayerSource().原本的getLayerSourse()当前版本也还可以使用。
+以后可能会删除这个错误命名的函数。
 
 ## 已修改
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
