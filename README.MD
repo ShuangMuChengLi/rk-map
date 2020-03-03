@@ -1,8 +1,15 @@
 ## 优先改
+1. 点击后出现两个重叠图标
+2. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
+3. vector.addLayerEventListener('moveout'）没触发
+4. 手动\自动画一条线，高亮线条周边X米范围的点位
+5. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
+
+## 已修改
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
 2. （已修改）测距会请求http://localhost:5000/image/marker.png.不合理
 3. （已修改）测距设置的颜色跟显示的颜色不一致
-4. 点击后出现两个重叠图标
+
 5. （已修改）不设置鼠标滑过的样式。鼠标滑过，元素消失了。应该默认不变才对(初始化加了透明度0.9   鼠标滑过时估计设置为了1.0。不设置滑过样式，api就不要动就好，不要有任何设置)
 6. （已修改）vector.getSource().addFeatures。图标添加第一个没问题，执行第二次，标记第二个点就标记不出来
 ````
@@ -46,18 +53,18 @@
 10. （已修改）要实现markerVector.setLayerStyle('layerStyle', layerStyleOption);功能
 11. （已修改）未设置样式的情况下   刚刚的写法（第9点）  图片能出来了  但出现Uncaught TypeError: Cannot set property 'text' of undefined 错误at RKStyleFun.initSingleStyle (RKStyleFun.js:268)
 12. （已修改）drawOption传递了两次，太重复。startDraw的drawOption建议非必填。RKMeasureTool的drawOption中的type建议能生效
-13. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
+
 14. （已修改）new RKFeatures(pointList)新建feature时，将点位数据存储在properties中。可以通过getProperties()取出
 15. （已修改）setLayerStyle  addLayerEventListener只能执行一次  其他图层再设置就失效了   这个问题很严重  优先排查下
 16. （已修改）框选的画笔selectLayers如果没传，默认框选所有的
-17. addVectorFeatures  addFeatures能不能统一addFeatures。是不是考虑用原生就可以
+
 18. （已修改）聚合图层使用setLayerStyle，会导致数字的出现
 19. （已修改）setLayerStyle能否传递函数
 20. （已修改）显示隐藏地图弹窗的demo（有api，但最好加demo)
 21. （已修改）地图切换的api以及demo
-22. 框选实现右键取消框选画笔状态。遇到了一个问题  用户开始准备框选  鼠标变成了画笔  突然不想画了   右键取消画笔
+22. （已修改）框选实现右键取消框选画笔状态。遇到了一个问题  用户开始准备框选  鼠标变成了画笔  突然不想画了   右键取消画笔
 23. （已修改）设置了vector.addLayerEventListener('movein'）  但没设置movein样式。会导致图标消失，期望默认使用normal样式  不要变
-24. vector.addLayerEventListener('moveout'）没触发
+
 25. （已修改）轨迹demo要执行start()，然后执行startManualTrack()才有效。如何一开始就进行就能手动播放轨迹？
 26. （已修改）轨迹demo中的白色动球圆是哪里设置，如何设置一个自定义图片。
 27. （已修改）doAction:不要必填
@@ -66,17 +73,16 @@
 vector.getLayerSourse().clear();
 30. （已修改）轨迹点位初始化和高亮默认imageAnchor: [0.5, 0.5]
 31. （已修改）trackTool.startAutoTrack多次执行，导致动球反复渲染，多个叠加。希望startAutoTrack和endAutoTrack能够清空动球。
-32. 手动\自动画一条线，高亮线条周边X米范围的点位
+
 33. （已修改）执行一次  nextTrack，但doAction触发了两次
 34. (已修改)点击轨迹上的点，能够高亮，并触发事件，并触发手动播放模式，并将当前播放的index设置为这个点
 35. (已修改)所有的api的feature都要参照第8、14条：要存储点位数组的信息到properties里。目前轨迹doAction获取到的feature没有properties信息
-36. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
 37. (已修改)提供清除轨迹的api——drawTool.clear();
 38. (已修改)停止轨迹手动播放API——drawTool.endManualTrack();
 39. (已修改)drawTool.drawCircle(option);确认一下半径的单位是什么。如果不是米，要改为米 —— 测量工具下测量验证后是以米为单位。
 40. (已修改)轨迹自动播放，需要暂停和继续的功能 —— drawTool.pauseAutoTrack(); 第一次为暂停，第二次为继续，依次类推。
-41. (待验证)多个点位  地图居中 -- rkMap.fitViewZoom(pointList); var pointList = [{ id: '1', lonLat: [118.15, 24.51], text: '1'}, {id: '2', lonLat: [118.14, 24.5],text: '2'}
-42. (待验证)vecLayer1.getSource().addRkFeatures([{
+41. (已修改)多个点位  地图居中 -- rkMap.fitViewZoom(pointList); var pointList = [{ id: '1', lonLat: [118.15, 24.51], text: '1'}, {id: '2', lonLat: [118.14, 24.5],text: '2'}
+42. (已修改)vecLayer1.getSource().addRkFeatures([{
         id: '11',
         lonLat: [118.171, 24.511],
         text: '11'
@@ -87,14 +93,14 @@ vector.getLayerSourse().clear();
     }
     ]).setCenter(); -- 修改为vecLayer.addRkFeatures([{},{}]).updateView();
     
-43. (待验证)删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
-44. (待验证)缺少轨迹自动播放结束的回调函数
-45. (待验证)mapServiceObj的projection和RKMap的projection区别 
+43. (已修改)删除startManualTrack 、endManualTrack  ；startAutoTrack自动停止手动播放；prevTrack、nextTrack自动停止自动播放；doAction等其他播放设置放在setTrack中；
+44. (已修改)缺少轨迹自动播放结束的回调函数
+45. (已修改)mapServiceObj的projection和RKMap的projection区别 ——mapServiceObj的projection是view的
 -- mapServiceObj 的 projection 是用于通过url加载的数据源source的投影坐标,会影响到source的显示。
 -- RKMap 的projection 设置的是view(视图)的projection。 其作用之一是，当绘制点，线，面的时候，其坐标需要符合projection投影的坐标要求。否则就会显示不出来或者
 显示到其他较远的地方。
-46. (待验证)不设置projection，updateView失效
-47. (待验证)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
+46. (已修改)不设置projection，updateView失效
+47. (已修改)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
 
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
