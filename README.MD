@@ -1,18 +1,10 @@
 ## 优先改
-1. 点击后出现两个重叠图标
-2. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
-3. vector.addLayerEventListener('moveout'）没触发
-
+1. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
 4. 手动\自动画一条线，高亮线条周边X米范围的点位  -- 使用方法：参考drawTool.html 
 var drawTool = new ol.ropeok.RKDrawFeature(rkMap, drawOption, drawCallBack) 中的第二个参数：drawOption = {
         drawSelect:true [表示执行选中绘制图形内的元素],  selectedRadium:50 [用于指定绘制线段时候，线段周围50米的范围内为选中范围，单位米], ...}
 drawTool.setSelectedRadium(60) 设置selecedRadium的半径。
 
-5. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
---使用方法,传入feature的id 或 feature本身。 vecLayer.setFeatureSelected(id)
-
-6. 发现之前函数名称命名错误：原来函数为vecLayer.getLayerSourse() ,现在改为vecLayer.getLayerSource().原本的getLayerSourse()当前版本也还可以使用。
-以后可能会删除这个错误命名的函数。
 
 ## 已修改
 1. （已修改）测距画完以后，页面图形不会出来，移动一下地图才出来。清空图绘制元素也一样的BUG   拖动地图  才消失
@@ -110,7 +102,12 @@ vector.getLayerSourse().clear();
 显示到其他较远的地方。
 46. (已修改)不设置projection，updateView失效
 47. (已修改)获取某点根据X,Y像素的偏移后的经纬度 - rkMap.setCenter(coor, offset) ,offset = [ - width/2 ,- heigth /2]
-
+48. 点击后出现两个重叠图标
+3. vector.addLayerEventListener('moveout'）没触发
+5. vecLayer.setFeatureSelected(feature); 和vecLayer.cancelFeatureSelected(feature)添加demo。支持两种参数feature以及ID
+--使用方法,传入feature的id 或 feature本身。 vecLayer.setFeatureSelected(id)
+6. 发现之前函数名称命名错误：原来函数为vecLayer.getLayerSourse() ,现在改为vecLayer.getLayerSource().原本的getLayerSourse()当前版本也还可以使用。
+以后可能会删除这个错误命名的函数。
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
