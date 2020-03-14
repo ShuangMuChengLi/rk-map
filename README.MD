@@ -1,9 +1,23 @@
 ## 优先改
 1. 图标选中后，点击地图其他地方，不要还原样式。图层提供一个方法，手动调用，然后还原。
-4. 手动\自动画一条线，高亮线条周边X米范围的点位  -- 使用方法：参考drawTool.html 
-var drawTool = new ol.ropeok.RKDrawFeature(rkMap, drawOption, drawCallBack) 中的第二个参数：drawOption = {
-        drawSelect:true [表示执行选中绘制图形内的元素],  selectedRadium:50 [用于指定绘制线段时候，线段周围50米的范围内为选中范围，单位米], ...}
-drawTool.setSelectedRadium(60) 设置selecedRadium的半径。
+2. 点击矢量图层，高亮，点击地图空白地方，高亮图标会一闪一闪
+3. 点击的高亮，要能够通过vector.cancelFeatureSelected(currentActivePoint);取消高亮
+4. 矢量图层点击高亮后 ，清空图层，其他图标消失，但高亮图标还在。点击地图其他地方高亮消失，然后报错
+````
+RKSelectInteraction.js:113 Uncaught TypeError: Cannot read property 'get' of null
+    at getFunc (RKSelectInteraction.js:113)
+    at RKSelectInteraction.getSelectMethod (RKSelectInteraction.js:123)
+    at RKSelectInteraction.getSelectedFeatureStyle (RKSelectInteraction.js:136)
+    at RKSelectInteraction.initSelectedLayerStyle (RKSelectInteraction.js:170)
+    at CanvasVectorLayerRenderer.<anonymous> (VectorLayer.js:310)
+    at CanvasVectorLayerRenderer.prepareFrame (VectorLayer.js:330)
+    at VectorLayer.Layer.render (Layer.js:199)
+    at CompositeMapRenderer.renderFrame (Composite.js:100)
+    at Map.PluggableMap.renderFrame_ (PluggableMap.js:1264)
+    at Map.<anonymous> (PluggableMap.js:176)
+````
+5. 聚合图层存在类似2、3问题，而且点击地图空白地方，图标会消失，期望不消失
+
 
 
 ## 已修改
@@ -108,6 +122,11 @@ vector.getLayerSourse().clear();
 --使用方法,传入feature的id 或 feature本身。 vecLayer.setFeatureSelected(id)
 6. 发现之前函数名称命名错误：原来函数为vecLayer.getLayerSourse() ,现在改为vecLayer.getLayerSource().原本的getLayerSourse()当前版本也还可以使用。
 以后可能会删除这个错误命名的函数。
+4. 手动\自动画一条线，高亮线条周边X米范围的点位  -- 使用方法：参考drawTool.html 
+var drawTool = new ol.ropeok.RKDrawFeature(rkMap, drawOption, drawCallBack) 中的第二个参数：drawOption = {
+        drawSelect:true [表示执行选中绘制图形内的元素],  selectedRadium:50 [用于指定绘制线段时候，线段周围50米的范围内为选中范围，单位米], ...}
+drawTool.setSelectedRadium(60) 设置selecedRadium的半径。
+
 ## 优化
 1. （已修改）图标不设置样式，默认不显示或者显示小圆点。不要依赖图片marker.png
 2. （已修改）feature和vector不应该耦合在一起
