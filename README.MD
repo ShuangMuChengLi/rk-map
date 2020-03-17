@@ -123,6 +123,7 @@ RKSelectInteraction.js:113 Uncaught TypeError: Cannot read property 'get' of nul
     at Map.PluggableMap.renderFrame_ (PluggableMap.js:1264)
     at Map.<anonymous> (PluggableMap.js:176)
 ````
+
 5. 聚合图层存在类似2、3问题，而且点击地图空白地方，图标会消失，期望不消失
 8. （已修改）弹窗隐藏的方法是哪个
 9. （已修改）clusterLayer.html  initClusterSelectedFn第一个参数不是一个数组，但demo却去判断length
